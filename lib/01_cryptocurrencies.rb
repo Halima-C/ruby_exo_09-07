@@ -17,9 +17,18 @@ conversions.each do |tab1,tab2|
 end
 
 
-puts "Question 2 : La ou les crypto qui ont la plus petite valeur."
+puts "Question 2 : La ou les crypto qui ont la plus petite valeur"
 
 conversions.each do |tab1,tab2|
 	puts " #{tab1} " if tab2 == conversions.values.min
 end
 
+puts "Question 3 : inferieures à 6000"
+sous_6000 = conversions.select {|tab1,tab2| tab2 < 6000.0}
+	puts "#{sous_6000}" 
+
+puts "Question 4 : plus chère sous 6000"
+sous_6000p = conversions.select {|tab1,tab2| tab2 < 6000.0}
+sous_6000p.each do |tab1,tab2|
+	puts "#{tab1}" if tab2 == sous_6000p.values.max
+end
